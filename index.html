@@ -1,263 +1,291 @@
 <!doctype html>
 <html lang="en" data-bs-theme="light">
-  <head><script src="assets/js/color-modes.js"></script>
 
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
-    <meta name="generator" content="Hugo 0.122.0">
-    <meta name="google-adsense-account" content="ca-pub-9845325425043057">
-    <title>Congratulations on earning your Amazon reward!</title>
+<head>
+  <script src="assets/js/color-modes.js"></script>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/jumbotron/">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="">
+  <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+  <meta name="generator" content="Hugo 0.122.0">
+  <meta name="google-adsense-account" content="ca-pub-9845325425043057">
+  <title>Congratulations on earning your Amazon reward!</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
+  <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/jumbotron/">
 
-    <script src="https://gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@docsearch/css@3">
 
-<script src="https://gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
+  <script src="https://gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
 
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=AW-16903458782">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <script src="https://gstatic.com/firebasejs/10.7.1/firebase-database-compat.js"></script>
 
-  gtag('config', 'AW-16903458782');
-</script>
 
-<link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-    <style>
+  <style>
+    .discountText {
+      animation: scaling 4s infinite ease-in-out;
+    }
 
-.discountText {
-    animation: scaling 4s infinite ease-in-out;
-}
-
-@keyframes scaling {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.10);
-  }
-  
-  100% {
-    transform: scale(1);
-  }
-}
-
-      .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
+    @keyframes scaling {
+      0% {
+        transform: scale(1);
       }
 
-      @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-          font-size: 3.5rem;
-        }
+      50% {
+        transform: scale(1.10);
       }
 
-      .b-example-divider {
-        width: 100%;
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      100% {
+        transform: scale(1);
       }
+    }
 
-      .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
+    .bd-placeholder-img {
+      font-size: 1.125rem;
+      text-anchor: middle;
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    @media (min-width: 768px) {
+      .bd-placeholder-img-lg {
+        font-size: 3.5rem;
       }
+    }
 
-      .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-      }
+    .b-example-divider {
+      width: 100%;
+      height: 3rem;
+      background-color: rgba(0, 0, 0, .1);
+      border: solid rgba(0, 0, 0, .15);
+      border-width: 1px 0;
+      box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+    }
 
-      .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-      }
+    .b-example-vr {
+      flex-shrink: 0;
+      width: 1.5rem;
+      height: 100vh;
+    }
 
-      .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-      }
+    .bi {
+      vertical-align: -.125em;
+      fill: currentColor;
+    }
 
-      .btn-bd-primary {
-        --bd-violet-bg: #712cf9;
-        --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
+    .nav-scroller {
+      position: relative;
+      z-index: 2;
+      height: 2.75rem;
+      overflow-y: hidden;
+    }
 
-        --bs-btn-font-weight: 600;
-        --bs-btn-color: var(--bs-white);
-        --bs-btn-bg: var(--bd-violet-bg);
-        --bs-btn-border-color: var(--bd-violet-bg);
-        --bs-btn-hover-color: var(--bs-white);
-        --bs-btn-hover-bg: #6528e0;
-        --bs-btn-hover-border-color: #6528e0;
-        --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
-        --bs-btn-active-color: var(--bs-btn-hover-color);
-        --bs-btn-active-bg: #5a23c8;
-        --bs-btn-active-border-color: #5a23c8;
-      }
+    .nav-scroller .nav {
+      display: flex;
+      flex-wrap: nowrap;
+      padding-bottom: 1rem;
+      margin-top: -1px;
+      overflow-x: auto;
+      text-align: center;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
 
-      .bd-mode-toggle {
-        z-index: 1500;
-      }
+    .btn-bd-primary {
+      --bd-violet-bg: #712cf9;
+      --bd-violet-rgb: 112.520718, 44.062154, 249.437846;
 
-      .bd-mode-toggle .dropdown-menu .active .bi {
-        display: block !important;
-      }
-    </style>
-    
-  </head>
-  <body>   
-    <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
-      <symbol id="check2" viewBox="0 0 16 16">
-        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
-      </symbol>
-      <symbol id="circle-half" viewBox="0 0 16 16">
-        <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z"/>
-      </symbol>
-      <symbol id="moon-stars-fill" viewBox="0 0 16 16">
-        <path d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z"/>
-        <path d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z"/>
-      </symbol>
-      <symbol id="sun-fill" viewBox="0 0 16 16">
-        <path d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
-      </symbol>
-    </svg>
+      --bs-btn-font-weight: 600;
+      --bs-btn-color: var(--bs-white);
+      --bs-btn-bg: var(--bd-violet-bg);
+      --bs-btn-border-color: var(--bd-violet-bg);
+      --bs-btn-hover-color: var(--bs-white);
+      --bs-btn-hover-bg: #6528e0;
+      --bs-btn-hover-border-color: #6528e0;
+      --bs-btn-focus-shadow-rgb: var(--bd-violet-rgb);
+      --bs-btn-active-color: var(--bs-btn-hover-color);
+      --bs-btn-active-bg: #5a23c8;
+      --bs-btn-active-border-color: #5a23c8;
+    }
 
-    <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
-      <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center"
-              id="bd-theme"
-              type="button"
-              aria-expanded="false"
-              data-bs-toggle="dropdown"
-              aria-label="Toggle theme (auto)">
-        <svg class="bi my-1 theme-icon-active" width="1em" height="1em"><use href="#circle-half"></use></svg>
-        <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
-      </button>
-      <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#sun-fill"></use></svg>
-            Light
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark" aria-pressed="false">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#moon-stars-fill"></use></svg>
-            Dark
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-        <li>
-          <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto" aria-pressed="true">
-            <svg class="bi me-2 opacity-50" width="1em" height="1em"><use href="#circle-half"></use></svg>
-            Auto
-            <svg class="bi ms-auto d-none" width="1em" height="1em"><use href="#check2"></use></svg>
-          </button>
-        </li>
-      </ul>
-    </div>
-    <span id="topmost-parent" class=" text-decoration-none">
-<main>
-  <div class="container py-4">
-    <header class="pb-3 mb-4 border-bottom">
-      <!-- <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none"> -->
-        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img"><title>Bootstrap</title><path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path></svg> -->
-        <div class="row">
-          <div class="col-7">
-            <img src="assets/img/am1.jpeg" alt="" width="100" height="80" class="me-2">
-            <span class="fs-4 fw-bold"><i>Congratulations on earning your Amazon reward!</i></span>
+    .bd-mode-toggle {
+      z-index: 1500;
+    }
+
+    .bd-mode-toggle .dropdown-menu .active .bi {
+      display: block !important;
+    }
+  </style>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16933281205">
+  </script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'AW-16933281205');
+  </script>
+
+
+</head>
+
+<body>
+  <svg xmlns="http://www.w3.org/2000/svg" class="d-none">
+    <symbol id="check2" viewBox="0 0 16 16">
+      <path
+        d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z" />
+    </symbol>
+    <symbol id="circle-half" viewBox="0 0 16 16">
+      <path d="M8 15A7 7 0 1 0 8 1v14zm0 1A8 8 0 1 1 8 0a8 8 0 0 1 0 16z" />
+    </symbol>
+    <symbol id="moon-stars-fill" viewBox="0 0 16 16">
+      <path
+        d="M6 .278a.768.768 0 0 1 .08.858 7.208 7.208 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277.527 0 1.04-.055 1.533-.16a.787.787 0 0 1 .81.316.733.733 0 0 1-.031.893A8.349 8.349 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.752.752 0 0 1 6 .278z" />
+      <path
+        d="M10.794 3.148a.217.217 0 0 1 .412 0l.387 1.162c.173.518.579.924 1.097 1.097l1.162.387a.217.217 0 0 1 0 .412l-1.162.387a1.734 1.734 0 0 0-1.097 1.097l-.387 1.162a.217.217 0 0 1-.412 0l-.387-1.162A1.734 1.734 0 0 0 9.31 6.593l-1.162-.387a.217.217 0 0 1 0-.412l1.162-.387a1.734 1.734 0 0 0 1.097-1.097l.387-1.162zM13.863.099a.145.145 0 0 1 .274 0l.258.774c.115.346.386.617.732.732l.774.258a.145.145 0 0 1 0 .274l-.774.258a1.156 1.156 0 0 0-.732.732l-.258.774a.145.145 0 0 1-.274 0l-.258-.774a1.156 1.156 0 0 0-.732-.732l-.774-.258a.145.145 0 0 1 0-.274l.774-.258c.346-.115.617-.386.732-.732L13.863.1z" />
+    </symbol>
+    <symbol id="sun-fill" viewBox="0 0 16 16">
+      <path
+        d="M8 12a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z" />
+    </symbol>
+  </svg>
+
+  <div class="dropdown position-fixed bottom-0 end-0 mb-3 me-3 bd-mode-toggle">
+    <button class="btn btn-bd-primary py-2 dropdown-toggle d-flex align-items-center" id="bd-theme" type="button"
+      aria-expanded="false" data-bs-toggle="dropdown" aria-label="Toggle theme (auto)">
+      <svg class="bi my-1 theme-icon-active" width="1em" height="1em">
+        <use href="#circle-half"></use>
+      </svg>
+      <span class="visually-hidden" id="bd-theme-text">Toggle theme</span>
+    </button>
+    <ul class="dropdown-menu dropdown-menu-end shadow" aria-labelledby="bd-theme-text">
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="light"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50" width="1em" height="1em">
+            <use href="#sun-fill"></use>
+          </svg>
+          Light
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center" data-bs-theme-value="dark"
+          aria-pressed="false">
+          <svg class="bi me-2 opacity-50" width="1em" height="1em">
+            <use href="#moon-stars-fill"></use>
+          </svg>
+          Dark
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+      <li>
+        <button type="button" class="dropdown-item d-flex align-items-center active" data-bs-theme-value="auto"
+          aria-pressed="true">
+          <svg class="bi me-2 opacity-50" width="1em" height="1em">
+            <use href="#circle-half"></use>
+          </svg>
+          Auto
+          <svg class="bi ms-auto d-none" width="1em" height="1em">
+            <use href="#check2"></use>
+          </svg>
+        </button>
+      </li>
+    </ul>
+  </div>
+  <span id="topmost-parent" class=" text-decoration-none">
+    <main>
+      <div class="container py-4">
+        <header class="pb-3 mb-4 border-bottom">
+          <!-- <a href="/" class="d-flex align-items-center text-body-emphasis text-decoration-none"> -->
+          <!-- <svg xmlns="http://www.w3.org/2000/svg" width="40" height="32" class="me-2" viewBox="0 0 118 94" role="img"><title>Bootstrap</title><path fill-rule="evenodd" clip-rule="evenodd" d="M24.509 0c-6.733 0-11.715 5.893-11.492 12.284.214 6.14-.064 14.092-2.066 20.577C8.943 39.365 5.547 43.485 0 44.014v5.972c5.547.529 8.943 4.649 10.951 11.153 2.002 6.485 2.28 14.437 2.066 20.577C12.794 88.106 17.776 94 24.51 94H93.5c6.733 0 11.714-5.893 11.491-12.284-.214-6.14.064-14.092 2.066-20.577 2.009-6.504 5.396-10.624 10.943-11.153v-5.972c-5.547-.529-8.934-4.649-10.943-11.153-2.002-6.484-2.28-14.437-2.066-20.577C105.214 5.894 100.233 0 93.5 0H24.508zM80 57.863C80 66.663 73.436 72 62.543 72H44a2 2 0 01-2-2V24a2 2 0 012-2h18.437c9.083 0 15.044 4.92 15.044 12.474 0 5.302-4.01 10.049-9.119 10.88v.277C75.317 46.394 80 51.21 80 57.863zM60.521 28.34H49.948v14.934h8.905c6.884 0 10.68-2.772 10.68-7.727 0-4.643-3.264-7.207-9.012-7.207zM49.948 49.2v16.458H60.91c7.167 0 10.964-2.876 10.964-8.281 0-5.406-3.903-8.178-11.425-8.178H49.948z" fill="currentColor"></path></svg> -->
+          <div class="row">
+            <div class="col-7">
+              <img src="assets/img/am1.jpeg" alt="" width="100" height="80" class="me-2">
+              <span class="fs-4 fw-bold"><i>Congratulations on earning your Amazon reward!</i></span>
+            </div>
+            <div class="col-5">
+              <span class="discountLink">
+                <marquee> <img src="assets/img/am2.jpeg" alt="" width="200" height="80" class="me-2">
+                  <img src="assets/img/am3.jpeg" alt="" width="200" height="80" class="me-2">
+                </marquee>
+              </span>
+            </div>
           </div>
-          <div class="col-5">
-          <span class="discountLink"><marquee> <img src="assets/img/am2.jpeg" alt="" width="200" height="80" class="me-2">
-            <img src="assets/img/am3.jpeg" alt="" width="200" height="80" class="me-2">
-          </marquee>  </span>
-        </div>
-        </div>
-      <!-- </a> -->
-    </header>
+          <!-- </a> -->
+        </header>
 
-    <div class="p-2 mb-4 bg-body-tertiary rounded-3">
-      <div class="row">
-        <div class="container-fluid py-5 col-md-6">
-          <h2 class="display-10 fw-bold px-3"><i>Congratulations !! Here's your earned  $200 AMAZON reward. Enjoy  &#10024;</i></h2>
-          <br>
-          <p class="col-md-8 fs-6 w-100 px-3">Amazon Gift Cards are redeemable towards the purchase of millions of eligible goods and services provided by Amazon.com Services LLC and its affiliates on www.amazon.com, or certain of its affiliated properties, such as smile.amazon.com.</p>
-          <br>
-          <div class="col text-center">
-            
-            <button id="" class="btn btn-primary btn-lg m-auto discountText discountLink" type="button" style="background-color: #ffa41c;">
-              
-              <span > Click to claim your 200$ amazon reward .... </span>
-              
-            </button>
-            <br><br>
-            <img src="assets/img/am9.png" class="d-block w-100 " alt="...">
-          </div>
-        </div>
-        <div class="container-fluid py-5 col-md-6" >
-            <!-- <img src="assets/img/window-main.jpeg" alt="" width="100%" height="100%"> -->
+        <div class="p-2 mb-4 bg-body-tertiary rounded-3">
+          <div class="row">
+            <div class="container-fluid py-5 col-md-6">
+              <h2 class="display-10 fw-bold px-3"><i>Congratulations !! Here's your earned $200 AMAZON reward. Enjoy
+                  &#10024;</i></h2>
+              <br>
+              <p class="col-md-8 fs-6 w-100 px-3">Amazon Gift Cards are redeemable towards the purchase of millions of
+                eligible goods and services provided by Amazon.com Services LLC and its affiliates on www.amazon.com, or
+                certain of its affiliated properties, such as smile.amazon.com.</p>
+              <br>
+              <div class="col text-center">
 
-            <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel" >
-              <div class="carousel-inner discountLink">
-                <div class="carousel-item active" data-bs-interval="4000">
-                  <img src="assets/img/am4.gif" class="d-block w-100 " alt="...">
-                </div>
-                <div class="carousel-item" data-bs-interval="4000">
-                  <img src="assets//img//am5.jpeg" class="d-block w-100" alt="...">
-                </div>
-                <div class="carousel-item" data-bs-interval="4000">
-                  <img src="assets/img/am6.jpeg" class="d-block w-100" alt="...">
+                <button id="" class="btn btn-primary btn-lg m-auto discountText discountLink" type="button"
+                  style="background-color: #ffa41c;">
+
+                  <span> Click to claim your 200$ amazon reward .... </span>
+
+                </button>
+                <br><br>
+                <img src="assets/img/am9.png" class="d-block w-100 " alt="...">
+              </div>
+            </div>
+            <div class="container-fluid py-5 col-md-6">
+              <!-- <img src="assets/img/window-main.jpeg" alt="" width="100%" height="100%"> -->
+
+              <div id="carouselExampleSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner discountLink">
+                  <div class="carousel-item active" data-bs-interval="4000">
+                    <img src="assets/img/am4.gif" class="d-block w-100 " alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="4000">
+                    <img src="assets//img//am5.jpeg" class="d-block w-100" alt="...">
+                  </div>
+                  <div class="carousel-item" data-bs-interval="4000">
+                    <img src="assets/img/am6.jpeg" class="d-block w-100" alt="...">
+                  </div>
                 </div>
               </div>
             </div>
+          </div>
         </div>
-      </div>
-    </div>
 
-    <div class="row align-items-md-stretch">
-      <div class="col-md-6">
-        <img src="assets/img/am7.jpg" class="d-block w-100" alt="...">
-        <!-- <div class="h-100 p-5 text-bg-dark rounded-3">
+        <div class="row align-items-md-stretch">
+          <div class="col-md-6">
+            <img src="assets/img/am7.jpg" class="d-block w-100" alt="...">
+            <!-- <div class="h-100 p-5 text-bg-dark rounded-3">
           <h2>Enjoy our expertise</h2> -->
-          <!-- <p>Please read the product-specific details in the privacy statement, which provide additional relevant information. This statement applies to the interactions Microsoft has with you and the Microsoft products listed below, as well as other Microsoft products that display this statement.</p> -->
+            <!-- <p>Please read the product-specific details in the privacy statement, which provide additional relevant information. This statement applies to the interactions Microsoft has with you and the Microsoft products listed below, as well as other Microsoft products that display this statement.</p> -->
 
-          <!-- <p> - Expert installations and repairs for a hassle-free experience</p>
+            <!-- <p> - Expert installations and repairs for a hassle-free experience</p>
           <p> - Energy-efficient upgrades to save on utility costs</p>
           <p> - Personalized quotes for your specific project needs</p>
 
           <button class="btn btn-outline-light discountLink" type="button">
             <span style="text-decoration: none;">Check out more</span>
           </button> -->
-          
-        <!-- </div> -->
-      </div>
-      <div class="col-md-6">
-        <img src="assets/img/am8.jpg" class="d-block w-100" alt="...">
-        <!-- <div class="h-100 p-5 bg-body-tertiary border rounded-3">
+
+            <!-- </div> -->
+          </div>
+          <div class="col-md-6">
+            <img src="assets/img/am8.jpg" class="d-block w-100" alt="...">
+            <!-- <div class="h-100 p-5 bg-body-tertiary border rounded-3">
           <h2>The Importance Of Windows</h2>
           <p>There is a significant impact of windows on the aesthetics of your building, both internally and externally. 
             They allow natural light to enter resulting in a bright and cosy atmosphere.
@@ -266,208 +294,361 @@
             <span style="text-decoration: none;">Check out more</span>
           </button>
         </div> -->
-      </div>
-    </div>
+          </div>
+        </div>
 
-    <!-- <footer class="pt-3 mt-4 text-body-secondary border-top">
+        <!-- <footer class="pt-3 mt-4 text-body-secondary border-top">
       &copy; 2025
     </footer> -->
-    <div class="container">
-      <footer class="py-3 my-4">
-        <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" data-bs-toggle="modal" data-bs-target="#termsModal">Terms and Conditions</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" data-bs-toggle="modal" data-bs-target="#privacyModal">Privacy Policy</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" data-bs-toggle="modal" data-bs-target="#disclaimerModal">Disclaimer</a></li>
-          <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
-        </ul>
-        <p class="text-center text-body-secondary">© 1996-2025, Amazon.com, Inc.</p>
-      </footer>
-    </div>
+        <div class="container">
+          <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">Home</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" data-bs-toggle="modal"
+                  data-bs-target="#termsModal">Terms and Conditions</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" data-bs-toggle="modal"
+                  data-bs-target="#privacyModal">Privacy Policy</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary" data-bs-toggle="modal"
+                  data-bs-target="#disclaimerModal">Disclaimer</a></li>
+              <li class="nav-item"><a href="#" class="nav-link px-2 text-body-secondary">About</a></li>
+            </ul>
+            <p class="text-center text-body-secondary">© 1996-2025, Amazon.com, Inc.</p>
+          </footer>
+        </div>
 
-    <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Terms and Conditions</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            1. Introduction
-1.1 Thank you for visiting Landertab website located at landertab.com (the “Site”).
+        <div class="modal fade" id="termsModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Terms and Conditions</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                1. Introduction
+                1.1 Thank you for visiting Landertab website located at landertab.com (the “Site”).
 
-1.2 By using this website (“Website”), you agree to be legally bound to this agreement which consists of our Terms of and Conditions of Use and other disclosures and constitutes a legally binding agreement (“Agreement”) governing the terms being provided to you as a User with our service. Throughout this agreement, the words “Us,” “We,” “Our,” and “Company” refer to operating this site as is appropriate in the context of the use of the words. Likewise, the words “You”, “Your” and “User” refer to you as a User, the person who is being engaged with the website and presented with this document for your agreement.
+                1.2 By using this website (“Website”), you agree to be legally bound to this agreement which consists of
+                our Terms of and Conditions of Use and other disclosures and constitutes a legally binding agreement
+                (“Agreement”) governing the terms being provided to you as a User with our service. Throughout this
+                agreement, the words “Us,” “We,” “Our,” and “Company” refer to operating this site as is appropriate in
+                the context of the use of the words. Likewise, the words “You”, “Your” and “User” refer to you as a
+                User, the person who is being engaged with the website and presented with this document for your
+                agreement.
 
-1.3 Accessing the Website, in any manner, whether automated or otherwise, constitutes use of the Website and your agreement to be bound by these Terms and Conditions. The Company reserve the right to change these Terms and Conditions or to impose new conditions on use of the Website. In case the Company will decide to change these Terms and Conditions, the Company will post the revised Terms on this website. By continuing to use the Website, the User accept and agree to be bound to the revised Terms and Conditions.
+                1.3 Accessing the Website, in any manner, whether automated or otherwise, constitutes use of the Website
+                and your agreement to be bound by these Terms and Conditions. The Company reserve the right to change
+                these Terms and Conditions or to impose new conditions on use of the Website. In case the Company will
+                decide to change these Terms and Conditions, the Company will post the revised Terms on this website. By
+                continuing to use the Website, the User accept and agree to be bound to the revised Terms and
+                Conditions.
 
-2. Description of Service
-2.1 This Website offers information, advertisements, Surveys and/or other services as consideration for the provision of information to this Website. The Company’s surveys service is made available and presented to the User as a paid or organic advertisement or due to the User’s downloading, purchasing, subscribing, submitting to, or using an application, toolbar, browser extension, registration form or the like on the User’s computer or the User’s browser. The Company is not associated with or responsible for such applications or toolbars or browser extensions or registration forms or any technical issues with such Third-Party tools. Any questions, issues, problems, conflicts, or complaints regarding such Third-Party tools mentioned above should be resolved directly with the relevant Third Party.
+                2. Description of Service
+                2.1 This Website offers information, advertisements, Surveys and/or other services as consideration for
+                the provision of information to this Website. The Company’s surveys service is made available and
+                presented to the User as a paid or organic advertisement or due to the User’s downloading, purchasing,
+                subscribing, submitting to, or using an application, toolbar, browser extension, registration form or
+                the like on the User’s computer or the User’s browser. The Company is not associated with or responsible
+                for such applications or toolbars or browser extensions or registration forms or any technical issues
+                with such Third-Party tools. Any questions, issues, problems, conflicts, or complaints regarding such
+                Third-Party tools mentioned above should be resolved directly with the relevant Third Party.
 
-2.2 We do not sell or offer for sale any goods or services of any kind. Any such offers or sales of goods and services are conducted solely by third parties which we contract with to provide marketing services to. Once you’re visiting or engaging with our website, you may be redirected to a third-party marketing or advertising or service provider website, and at that point you will be communicating and/or transacting solely with this third party. Sometimes we frame third party advertiser’s website, and sometimes we host their content as well. For this service, we receive remuneration which is usually in the form of a commission or referral fee usually contingent upon you entering a transaction with the third party for goods or services. We do not ship any merchandise or provide any services to consumers or Users.
+                2.2 We do not sell or offer for sale any goods or services of any kind. Any such offers or sales of
+                goods and services are conducted solely by third parties which we contract with to provide marketing
+                services to. Once you’re visiting or engaging with our website, you may be redirected to a third-party
+                marketing or advertising or service provider website, and at that point you will be communicating and/or
+                transacting solely with this third party. Sometimes we frame third party advertiser’s website, and
+                sometimes we host their content as well. For this service, we receive remuneration which is usually in
+                the form of a commission or referral fee usually contingent upon you entering a transaction with the
+                third party for goods or services. We do not ship any merchandise or provide any services to consumers
+                or Users.
 
-2.3 By using the Website the User must comply with the terms and conditions set out in this agreement. The User must be at least 18 years of age (or meet the minimum legal age and any other requirements to enter into legal agreements in the User’s particular jurisdiction) to use the Company’s website. By using our website and by agreeing to these terms and conditions, the User warrants and represents that he or she is at least 18 years old of age.
+                2.3 By using the Website the User must comply with the terms and conditions set out in this agreement.
+                The User must be at least 18 years of age (or meet the minimum legal age and any other requirements to
+                enter into legal agreements in the User’s particular jurisdiction) to use the Company’s website. By
+                using our website and by agreeing to these terms and conditions, the User warrants and represents that
+                he or she is at least 18 years old of age.
 
-2.4 The Company adheres to best practices that the Website does not contain and will not contain any material that is discriminatory, abusive, or libelous or in any way inappropriate.
+                2.4 The Company adheres to best practices that the Website does not contain and will not contain any
+                material that is discriminatory, abusive, or libelous or in any way inappropriate.
 
-3. Third Party Advertisers and Service Providers
-3.2 The Website may contain links to Third Party websites owned or operated by parties other than the Company. Such links are provided for user’s reference only.
+                3. Third Party Advertisers and Service Providers
+                3.2 The Website may contain links to Third Party websites owned or operated by parties other than the
+                Company. Such links are provided for user’s reference only.
 
-3.3 The Company does not monitor or control Third Party resources or content or service outside the Website and therefore the Company won’t be responsible for any Third-Party content or service. The inclusion of links to Third Party resources does not imply any endorsement of the material in the Software or service.
+                3.3 The Company does not monitor or control Third Party resources or content or service outside the
+                Website and therefore the Company won’t be responsible for any Third-Party content or service. The
+                inclusion of links to Third Party resources does not imply any endorsement of the material in the
+                Software or service.
 
-3.4 The Company does not control any Third-Party content or monitor it for compliance with any requirement (e.g. truthfulness, integrity, legality). Accordingly, the Company does not bear any liability arisen in connection with User’s access or use of the Third-Party content or service.
+                3.4 The Company does not control any Third-Party content or monitor it for compliance with any
+                requirement (e.g. truthfulness, integrity, legality). Accordingly, the Company does not bear any
+                liability arisen in connection with User’s access or use of the Third-Party content or service.
 
-3.5 Any dispute User has concerning to a transaction with a Third-Party, the user shall resolve the dispute with such Third-Party directly without involving the Company.
+                3.5 Any dispute User has concerning to a transaction with a Third-Party, the user shall resolve the
+                dispute with such Third-Party directly without involving the Company.
 
-3.6 The Company does not define, suggest, and execute any control over prices or exchange rates of Third Parties. The Company is not a counterparty to any deal concluded.
+                3.6 The Company does not define, suggest, and execute any control over prices or exchange rates of Third
+                Parties. The Company is not a counterparty to any deal concluded.
 
-3.7 The Company does not regulate services of Third Parties and has no opportunity to affect the process of providing these services and its results.
+                3.7 The Company does not regulate services of Third Parties and has no opportunity to affect the process
+                of providing these services and its results.
 
-4. Security
-4.1 While the Company strives to protect the website and all information received from users, the Company cannot ensure or warrant the security of any information that the User transmits to the Company. The User acknowledges and understands this risk when communicating and engaging with this Website, the Company’s partners, the Company’s affiliates, and Company’s Third Parties.
+                4. Security
+                4.1 While the Company strives to protect the website and all information received from users, the
+                Company cannot ensure or warrant the security of any information that the User transmits to the Company.
+                The User acknowledges and understands this risk when communicating and engaging with this Website, the
+                Company’s partners, the Company’s affiliates, and Company’s Third Parties.
 
-5. Disclaimer
-5.1 THE INFORMATION, PRODUCTS AND SERVICES OFFERED ON OR THROUGH THE WEBSITE AND BY COMPANY AND ANY THIRD-PARTY SITES ARE PROVIDED “AS IS” AND WITHOUT WARRANTIES OF ANY KIND EITHER EXPRESS OR IMPLIED. TO THE FULLEST EXTENT PERMISSIBLE PURSUANT TO APPLICABLE LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE. WE DO NOT WARRANT THAT THE SITE OR ANY OF ITS FUNCTIONS WILL BE UNINTERRUPTED OR ERROR-FREE, THAT DEFECTS WILL BE CORRECTED, OR THAT ANY PART OF THIS WEBSITE, OR THE SERVERS THAT MAKE IT AVAILABLE, ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.
+                5. Disclaimer
+                5.1 THE INFORMATION, PRODUCTS AND SERVICES OFFERED ON OR THROUGH THE WEBSITE AND BY COMPANY AND ANY
+                THIRD-PARTY SITES ARE PROVIDED “AS IS” AND WITHOUT WARRANTIES OF ANY KIND EITHER EXPRESS OR IMPLIED. TO
+                THE FULLEST EXTENT PERMISSIBLE PURSUANT TO APPLICABLE LAW, WE DISCLAIM ALL WARRANTIES, EXPRESS OR
+                IMPLIED, INCLUDING, BUT NOT LIMITED TO, IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+                PARTICULAR PURPOSE. WE DO NOT WARRANT THAT THE SITE OR ANY OF ITS FUNCTIONS WILL BE UNINTERRUPTED OR
+                ERROR-FREE, THAT DEFECTS WILL BE CORRECTED, OR THAT ANY PART OF THIS WEBSITE, OR THE SERVERS THAT MAKE
+                IT AVAILABLE, ARE FREE OF VIRUSES OR OTHER HARMFUL COMPONENTS.
 
-5.2 WE DO NOT WARRANT OR MAKE ANY REPRESENTATIONS REGARDING THE USE OR THE RESULTS OF THE USE OF THE WEBSITE OR MATERIALS ON THIS WEBSITE OR ON THIRD-PARTY SITES IN TERMS OF THEIR CORRECTNESS, ACCURACY, TIMELINESS, RELIABILITY OR OTHERWISE.
+                5.2 WE DO NOT WARRANT OR MAKE ANY REPRESENTATIONS REGARDING THE USE OR THE RESULTS OF THE USE OF THE
+                WEBSITE OR MATERIALS ON THIS WEBSITE OR ON THIRD-PARTY SITES IN TERMS OF THEIR CORRECTNESS, ACCURACY,
+                TIMELINESS, RELIABILITY OR OTHERWISE.
 
-5.3 COMPANY SHALL IN NO EVENT BE HELD LIABLE TO ANY PARTY FOR ANY DIRECT, INDIRECT, PUNITIVE, SPECIAL, INCIDENTAL OR OTHER CONSEQUENTIAL DAMAGES ARISING DIRECTLY OR INDIRECTLY FOR ANY REASON.
+                5.3 COMPANY SHALL IN NO EVENT BE HELD LIABLE TO ANY PARTY FOR ANY DIRECT, INDIRECT, PUNITIVE, SPECIAL,
+                INCIDENTAL OR OTHER CONSEQUENTIAL DAMAGES ARISING DIRECTLY OR INDIRECTLY FOR ANY REASON.
 
-5.4 THE USER AGREES AT ALL TIMES TO DEFEND, INDEMNIFY AND HOLD HARMLESS COMPANY AND ITS AFFILIATES FROM AND AGAINST ANY AND ALL CLAIMS, CAUSES OF ACTION, DAMAGES, LIABILITIES, COSTS AND EXPENSES, INCLUDING LEGAL FEES AND EXPENSES, ARISING OUT OF OR RELATED TO THE USER’S BREACH OF ANY OBLIGATION, WARRANTY, REPRESENTATION OR COVENANT SET FORTH HEREIN.
+                5.4 THE USER AGREES AT ALL TIMES TO DEFEND, INDEMNIFY AND HOLD HARMLESS COMPANY AND ITS AFFILIATES FROM
+                AND AGAINST ANY AND ALL CLAIMS, CAUSES OF ACTION, DAMAGES, LIABILITIES, COSTS AND EXPENSES, INCLUDING
+                LEGAL FEES AND EXPENSES, ARISING OUT OF OR RELATED TO THE USER’S BREACH OF ANY OBLIGATION, WARRANTY,
+                REPRESENTATION OR COVENANT SET FORTH HEREIN.
 
-5.5 WE RESERVE THE RIGHT, AT OUR SOLE DISCRETION, TO CHANGE, MODIFY OR OTHERWISE ALTER THESE TERMS AND CONDITIONS AT ANY TIME. UNLESS OTHERWISE INDICATED, AMENDMENTS WILL BECOME EFFECTIVE IMMEDIATELY. PLEASE REVIEW THESE TERMS AND CONDITIONS PERIODICALLY. YOUR CONTINUED USE OF THE SITE FOLLOWING THE POSTING OF CHANGES AND/OR MODIFICATIONS WILL CONSTITUTE YOUR ACCEPTANCE OF THE REVISED TERMS AND CONDITIONS AND THE REASONABLENESS OF THESE STANDARDS FOR NOTICE OF CHANGES. FOR YOUR INFORMATION, THIS PAGE WAS LAST UPDATED AS OF THE DATE AT THE TOP OF THESE TERMS OF SERVICE. EACH ACCESS OF INFORMATION OR SUBMISSION OF INFORMATION TO OR FROM OPERATING THIS SITE WILL BE A SEPARATE, DISCRETE TRANSACTION BASED ON THE THEN PREVAILING TERMS.
+                5.5 WE RESERVE THE RIGHT, AT OUR SOLE DISCRETION, TO CHANGE, MODIFY OR OTHERWISE ALTER THESE TERMS AND
+                CONDITIONS AT ANY TIME. UNLESS OTHERWISE INDICATED, AMENDMENTS WILL BECOME EFFECTIVE IMMEDIATELY. PLEASE
+                REVIEW THESE TERMS AND CONDITIONS PERIODICALLY. YOUR CONTINUED USE OF THE SITE FOLLOWING THE POSTING OF
+                CHANGES AND/OR MODIFICATIONS WILL CONSTITUTE YOUR ACCEPTANCE OF THE REVISED TERMS AND CONDITIONS AND THE
+                REASONABLENESS OF THESE STANDARDS FOR NOTICE OF CHANGES. FOR YOUR INFORMATION, THIS PAGE WAS LAST
+                UPDATED AS OF THE DATE AT THE TOP OF THESE TERMS OF SERVICE. EACH ACCESS OF INFORMATION OR SUBMISSION OF
+                INFORMATION TO OR FROM OPERATING THIS SITE WILL BE A SEPARATE, DISCRETE TRANSACTION BASED ON THE THEN
+                PREVAILING TERMS.
 
-6. Limitation of Liability
-6.1 THE USER UNDERSTANDS AND AGREES THAT ANY DISPUTE OVER PRIVACY OR THESE TERMS OR THE USER’S USE OF THIS WEBSITE IS SUBJECT TO THE TERMS AND CONDITIONS HEREIN.
+                6. Limitation of Liability
+                6.1 THE USER UNDERSTANDS AND AGREES THAT ANY DISPUTE OVER PRIVACY OR THESE TERMS OR THE USER’S USE OF
+                THIS WEBSITE IS SUBJECT TO THE TERMS AND CONDITIONS HEREIN.
 
-THE MATERIALS AND INFORMATION CONTAINED ON THE COMPANY’S WEBSITE ARE PROVIDED “AS IS”, WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY WARRANTY FOR INFORMATION, SERVICES, OR PRODUCTS PROVIDED THROUGH OR IN CONNECTION WITH THE COMPANY’S WEBSITE AND ANY IMPLIED WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, EXPECTATION OF PRIVACY OR NON INFRINGEMENT. In no event shall the Company or the Company’s service providers, affiliates, associates, subsidiaries, or partners be liable for any damages, including, without limitation, damages for loss of data or profit, or due to business interruption, arising out of the use of or inability to use the materials contained on the Company’s website, even if the Company has been notified of the possibility of such damage. IN NO EVENT SHALL the Company, its OFFICERS, DIRECTORS, SHAREHOLDERS, EMPLOYEES, AGENTS, AFFILIATES, PARTNERS, ASSOCIATES, OR SERVICE PROVIDERS BE LIABLE FOR ANY LOSS, HOWSOEVER OCCASIONED, AS A RESULT OF THE USER’S USAGE OF THIS WEBSITE, AND THE USER ACKNOWLEDGES AND AGREES THAT HE IS THE SOLE RECOURSE IN CONNECTION WITH ANY PURCHASE OF GOODS OR SERVICES WHICH THE USER LEARNED ABOUT THROUGH THIS WEBSITE SHALL BE AGAINST THE THIRD PARTIES OR ANY OTHER PARTY WHO SOLD THE GOODS OR SERVICES TO THE USER. THE USER SPECIFICALLY AGREES TO INDEMNIFY THE COMPANY AND HOLD THE COMPANY HARMLESS FROM ANY AND ALL CLAIMS, DEMANDS, CAUSES OF ACTION, LEGAL PROCEEDINGS, COSTS, AND/OR DAMAGES ARISING FROM THE USER’S USE OF THIS WEBSITE.
+                THE MATERIALS AND INFORMATION CONTAINED ON THE COMPANY’S WEBSITE ARE PROVIDED “AS IS”, WITHOUT WARRANTY
+                OF ANY KIND, EITHER EXPRESS OR IMPLIED, INCLUDING WITHOUT LIMITATION ANY WARRANTY FOR INFORMATION,
+                SERVICES, OR PRODUCTS PROVIDED THROUGH OR IN CONNECTION WITH THE COMPANY’S WEBSITE AND ANY IMPLIED
+                WARRANTIES OR CONDITIONS OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, EXPECTATION OF PRIVACY OR
+                NON INFRINGEMENT. In no event shall the Company or the Company’s service providers, affiliates,
+                associates, subsidiaries, or partners be liable for any damages, including, without limitation, damages
+                for loss of data or profit, or due to business interruption, arising out of the use of or inability to
+                use the materials contained on the Company’s website, even if the Company has been notified of the
+                possibility of such damage. IN NO EVENT SHALL the Company, its OFFICERS, DIRECTORS, SHAREHOLDERS,
+                EMPLOYEES, AGENTS, AFFILIATES, PARTNERS, ASSOCIATES, OR SERVICE PROVIDERS BE LIABLE FOR ANY LOSS,
+                HOWSOEVER OCCASIONED, AS A RESULT OF THE USER’S USAGE OF THIS WEBSITE, AND THE USER ACKNOWLEDGES AND
+                AGREES THAT HE IS THE SOLE RECOURSE IN CONNECTION WITH ANY PURCHASE OF GOODS OR SERVICES WHICH THE USER
+                LEARNED ABOUT THROUGH THIS WEBSITE SHALL BE AGAINST THE THIRD PARTIES OR ANY OTHER PARTY WHO SOLD THE
+                GOODS OR SERVICES TO THE USER. THE USER SPECIFICALLY AGREES TO INDEMNIFY THE COMPANY AND HOLD THE
+                COMPANY HARMLESS FROM ANY AND ALL CLAIMS, DEMANDS, CAUSES OF ACTION, LEGAL PROCEEDINGS, COSTS, AND/OR
+                DAMAGES ARISING FROM THE USER’S USE OF THIS WEBSITE.
 
-6.2 Some jurisdictions do not allow the exclusion of implied warranties, so the above exclusion may not apply to you. This disclaimer of liability applies to any damages or injury caused by any failure of performance, error, omission, interruption, deletion, defect, delay in operation or transmission, computer virus, communication line failure, theft or destruction or unauthorized access to, alteration of, or use of record, whether for breach of contract, tortious behaviour, negligence, or under any other cause of action.
+                6.2 Some jurisdictions do not allow the exclusion of implied warranties, so the above exclusion may not
+                apply to you. This disclaimer of liability applies to any damages or injury caused by any failure of
+                performance, error, omission, interruption, deletion, defect, delay in operation or transmission,
+                computer virus, communication line failure, theft or destruction or unauthorized access to, alteration
+                of, or use of record, whether for breach of contract, tortious behaviour, negligence, or under any other
+                cause of action.
 
-6.3 We do not endorse or recommend any of the products or services available from Third Parties who advertise or market goods or services through the Personal Information which we obtain on their behalf pursuant to our marketing and/or advertising contracts with the Third Parties. We shall not be liable for any indirect, special, incidental, or consequential damages arising from this web site or its contents or from the purchase or licensing or any products or services from Third Parties. We shall make all reasonable efforts to ensure the accuracy and completeness of the information on this website. We shall not be liable for any loss or damages suffered due to inaccurate or incomplete information relating to the content displayed on this web site.
+                6.3 We do not endorse or recommend any of the products or services available from Third Parties who
+                advertise or market goods or services through the Personal Information which we obtain on their behalf
+                pursuant to our marketing and/or advertising contracts with the Third Parties. We shall not be liable
+                for any indirect, special, incidental, or consequential damages arising from this web site or its
+                contents or from the purchase or licensing or any products or services from Third Parties. We shall make
+                all reasonable efforts to ensure the accuracy and completeness of the information on this website. We
+                shall not be liable for any loss or damages suffered due to inaccurate or incomplete information
+                relating to the content displayed on this web site.
 
-7. Preservation of Intellectual Property Rights
-Material from this Website or from any other website owned, operated, licensed, or controlled by the Company may not be copied, reproduced, republished, uploaded, posted, transmitted, or distributed in any way. Modification of the materials or use of the materials for any other purpose is a violation of the copyrights and other proprietary rights held by the respective owners thereof. The use of any such material on any other web site, ftp server or network environment is prohibited.
+                7. Preservation of Intellectual Property Rights
+                Material from this Website or from any other website owned, operated, licensed, or controlled by the
+                Company may not be copied, reproduced, republished, uploaded, posted, transmitted, or distributed in any
+                way. Modification of the materials or use of the materials for any other purpose is a violation of the
+                copyrights and other proprietary rights held by the respective owners thereof. The use of any such
+                material on any other web site, ftp server or network environment is prohibited.
 
-8. Severability
-In the event that a provision of this Agreement is found to be unlawful, conflicting with another provision of the Agreement, or otherwise unenforceable, the Agreement will remain in force as though it had been entered into without that unenforceable provision being included in it. If two or more provisions of this Agreement are deemed to conflict with each other’s operation, operating this Website shall have the sole right to elect which provision remains in force.
+                8. Severability
+                In the event that a provision of this Agreement is found to be unlawful, conflicting with another
+                provision of the Agreement, or otherwise unenforceable, the Agreement will remain in force as though it
+                had been entered into without that unenforceable provision being included in it. If two or more
+                provisions of this Agreement are deemed to conflict with each other’s operation, operating this Website
+                shall have the sole right to elect which provision remains in force.
 
-9. Applicable Law and Jurisdiction
-This agreement shall be governed by and construed in accordance with the laws of Costa Rica and the parties hereby attorn to the jurisdiction of the courts of Costa Rica. Any provisions of this agreement which are or may be rendered invalid, unenforceable, or illegal, shall be ineffective only to the extent of such invalidity, unenforceability, or illegality, without affecting the validity, enforceability or legality of the remaining provisions of this Agreement. This agreement constitutes the entire agreement between the parties pertaining to the subject matter hereof and supersedes all prior and contemporaneous agreements, understandings, negotiations, and discussions, whether oral or written, of the parties.
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                9. Applicable Law and Jurisdiction
+                This agreement shall be governed by and construed in accordance with the laws of Costa Rica and the
+                parties hereby attorn to the jurisdiction of the courts of Costa Rica. Any provisions of this agreement
+                which are or may be rendered invalid, unenforceable, or illegal, shall be ineffective only to the extent
+                of such invalidity, unenforceability, or illegality, without affecting the validity, enforceability or
+                legality of the remaining provisions of this Agreement. This agreement constitutes the entire agreement
+                between the parties pertaining to the subject matter hereof and supersedes all prior and contemporaneous
+                agreements, understandings, negotiations, and discussions, whether oral or written, of the parties.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+              </div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
 
 
-    <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog  modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Privacy Policy</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            1. Introduction
-landertab.com (the “Website”) is an Internet property of Landertab (“Us” or” We” or “Company”). We created this privacy policy (“Privacy Policy”) so that we may advise you on how our technology system (“Technology”) processes information on behalf of the online advertisers, media partners, affiliates, website owners, and any other website, businesses, or third parties that use our services. If you have any questions or comments about this Privacy Policy, please feel free to contact us at landers@berrymail.cc. You fully agree to this Privacy Policy, in its entirety, when you:
+        <div class="modal fade" id="privacyModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+          <div class="modal-dialog  modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Privacy Policy</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                1. Introduction
+                landertab.com (the “Website”) is an Internet property of Landertab (“Us” or” We” or “Company”). We
+                created this privacy policy (“Privacy Policy”) so that we may advise you on how our technology system
+                (“Technology”) processes information on behalf of the online advertisers, media partners, affiliates,
+                website owners, and any other website, businesses, or third parties that use our services. If you have
+                any questions or comments about this Privacy Policy, please feel free to contact us at
+                landers@berrymail.cc. You fully agree to this Privacy Policy, in its entirety, when you:
 
-(1) Enter or use the Website; and/or (2) Enter or use services available through the Website (“Services”).
+                (1) Enter or use the Website; and/or (2) Enter or use services available through the Website
+                (“Services”).
 
-If you do not agree with the terms and conditions of our Privacy Policy, please do not use, or access the Website or apply for the Services.
+                If you do not agree with the terms and conditions of our Privacy Policy, please do not use, or access
+                the Website or apply for the Services.
 
-2. Privacy Statement
-2.1 Collection of Personally Identifiable Information (PII)
-We do not collect Personally Identifiable Information (“PII”) from this website..
+                2. Privacy Statement
+                2.1 Collection of Personally Identifiable Information (PII)
+                We do not collect Personally Identifiable Information (“PII”) from this website..
 
-PII is any information that can be used to name or locate a particular individual or entity. This includes, but is not limited to: name, address, phone number, and/or email address.
+                PII is any information that can be used to name or locate a particular individual or entity. This
+                includes, but is not limited to: name, address, phone number, and/or email address.
 
-3. Cookies & Digital Identifiers
-3.1 Usage of Cookies
-We may automatically receive and store certain types of information about you through the data sources listed below.
+                3. Cookies & Digital Identifiers
+                3.1 Usage of Cookies
+                We may automatically receive and store certain types of information about you through the data sources
+                listed below.
 
-You may be familiar with the term “cookies,” which are unique alphanumeric identifiers that store information on your computer. A cookie is placed on your computer when your web browser accesses our website. We use cookies for tracking transactions and the user characteristics explained in detail throughout this Privacy Policy. If you choose, there are utilities available for purchase from independent software providers to install on your computer as well as tools/preferences you can choose through most web browsers to make website visits anonymous. Of course, cookies let you have a more satisfying website experience, so we recommend that you leave them turned on.
+                You may be familiar with the term “cookies,” which are unique alphanumeric identifiers that store
+                information on your computer. A cookie is placed on your computer when your web browser accesses our
+                website. We use cookies for tracking transactions and the user characteristics explained in detail
+                throughout this Privacy Policy. If you choose, there are utilities available for purchase from
+                independent software providers to install on your computer as well as tools/preferences you can choose
+                through most web browsers to make website visits anonymous. Of course, cookies let you have a more
+                satisfying website experience, so we recommend that you leave them turned on.
 
-You can always remove and clear our web browser cookies independently by using your web browser tool kit provided by your web browser. In addition to that, you can reach out to us directly and request to opt out permanently by sending us an email to the following address – landers@berrymail.cc.
+                You can always remove and clear our web browser cookies independently by using your web browser tool kit
+                provided by your web browser. In addition to that, you can reach out to us directly and request to opt
+                out permanently by sending us an email to the following address – landers@berrymail.cc.
 
-Additionally, we may use pixel tracking technology to track the completion of transactions with us or our advertisers, the source information for those transactions, and your IP address, date/time stamp, browser type, and referring URL.
+                Additionally, we may use pixel tracking technology to track the completion of transactions with us or
+                our advertisers, the source information for those transactions, and your IP address, date/time stamp,
+                browser type, and referring URL.
 
-4. Security
-4.1 Security Measures
-All given information is stored in a fully secure environment. We use SSL encryption to protect Sensitive Information online and offline.
+                4. Security
+                4.1 Security Measures
+                All given information is stored in a fully secure environment. We use SSL encryption to protect
+                Sensitive Information online and offline.
 
-Regrettably, no data transmission over the Internet can be fully 100% safe. Therefore, we cannot 100% ensure or guarantee the security of any information that you send to us, therefore please bear in mind the existence of such risk when sending us your information.
+                Regrettably, no data transmission over the Internet can be fully 100% safe. Therefore, we cannot 100%
+                ensure or guarantee the security of any information that you send to us, therefore please bear in mind
+                the existence of such risk when sending us your information.
 
-5. Copyright Notice
-5.1 Copyright Ownership
-Copyright and other similar intellectual property with regard to all text and/or images and/or videos relating to the Company’s services and the full content of this website is fully owned by the Company.
+                5. Copyright Notice
+                5.1 Copyright Ownership
+                Copyright and other similar intellectual property with regard to all text and/or images and/or videos
+                relating to the Company’s services and the full content of this website is fully owned by the Company.
 
-6. General
-6.1 Agreement to Privacy Policy
-By entering this website, you agree to our privacy policy and terms and conditions. Our Privacy Policy cannot be revised, altered, changed, or affixed unless in writing and signed by an authorized representative of the Company.
+                6. General
+                6.1 Agreement to Privacy Policy
+                By entering this website, you agree to our privacy policy and terms and conditions. Our Privacy Policy
+                cannot be revised, altered, changed, or affixed unless in writing and signed by an authorized
+                representative of the Company.
 
-7. Notification of Changes
-The Company reserves the right to alter these conditions as needed or when it sees fit and without any notice to the User. Your continued use of the Website will guarantee your acceptance of any changes to the privacy policy terms.
+                7. Notification of Changes
+                The Company reserves the right to alter these conditions as needed or when it sees fit and without any
+                notice to the User. Your continued use of the Website will guarantee your acceptance of any changes to
+                the privacy policy terms.
 
-8. Contacting the Website
-If you have any comments or questions about this Privacy Policy or the performance of the Landertab website, feel free to contact us at:
+                8. Contacting the Website
+                If you have any comments or questions about this Privacy Policy or the performance of the Landertab
+                website, feel free to contact us at:
 
-Email: landers@berrymail.cc
+                Email: landers@berrymail.cc
 
-Website: https://landertab.com
+                Website: https://landertab.com
 
-** The terms and conditions of this privacy policy form part of the Agreement between you (the User) and the Company. Your use of this website and/or registration with the Company suggests your understanding, agreement to, and acceptance of the Privacy Policy and the full Terms and Conditions of the Company.
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="modal fade" id="disclaimerModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-dialog-scrollable">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Disclaimer</h1>
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          </div>
-          <div class="modal-body">
-            Disclaimer
-Information Only; Not Financial Advice
-The content, resources, and links provided on this website are for informational and educational purposes only and are not intended to address your particular financial or personal needs. All content is general in nature and should not be considered as financial advice, an endorsement, or a recommendation.
-
-No Liability for Third-Party Content or Websites
-This website may contain links to third-party websites, resources, and services. We are not responsible for the accuracy, relevance, or completeness of the information provided on these external sites. Any interaction you engage in with third-party sites is solely at your own risk. We assume no liability for any loss or damage incurred from accessing, using, or relying on the information provided by these third-party websites.
-
-Independent Financial Advice Recommended
-It is essential that you conduct your own due diligence and, where necessary, seek independent financial advice before making any financial decisions. This website and its creators do not provide regulated financial advice, and you are encouraged to consult a qualified financial advisor to determine what may be best for your individual financial situation.
-
-Investment Risk
-Please note that all investments carry inherent risks. The value of investments and any income derived from them can fluctuate, potentially resulting in the loss of the original investment amount. Past performance is not indicative of future results.
-
-Disclosure of Affiliations
-In cases where we may have a financial or commercial relationship with a company or service featured on this website, we will clearly disclose this affiliation in the relevant content.
-
-By using this website, you acknowledge that you understand and accept these terms. This disclaimer is subject to change, and we advise you to review it periodically to stay informed of any updates.
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+                ** The terms and conditions of this privacy policy form part of the Agreement between you (the User) and
+                the Company. Your use of this website and/or registration with the Company suggests your understanding,
+                agreement to, and acceptance of the Privacy Policy and the full Terms and Conditions of the Company.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+              </div>
+            </div>
           </div>
         </div>
+
+        <div class="modal fade" id="disclaimerModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+          aria-hidden="true">
+          <div class="modal-dialog modal-dialog-scrollable">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h1 class="modal-title fs-5" id="exampleModalLabel">Disclaimer</h1>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+              </div>
+              <div class="modal-body">
+                Disclaimer
+                Information Only; Not Financial Advice
+                The content, resources, and links provided on this website are for informational and educational
+                purposes only and are not intended to address your particular financial or personal needs. All content
+                is general in nature and should not be considered as financial advice, an endorsement, or a
+                recommendation.
+
+                No Liability for Third-Party Content or Websites
+                This website may contain links to third-party websites, resources, and services. We are not responsible
+                for the accuracy, relevance, or completeness of the information provided on these external sites. Any
+                interaction you engage in with third-party sites is solely at your own risk. We assume no liability for
+                any loss or damage incurred from accessing, using, or relying on the information provided by these
+                third-party websites.
+
+                Independent Financial Advice Recommended
+                It is essential that you conduct your own due diligence and, where necessary, seek independent financial
+                advice before making any financial decisions. This website and its creators do not provide regulated
+                financial advice, and you are encouraged to consult a qualified financial advisor to determine what may
+                be best for your individual financial situation.
+
+                Investment Risk
+                Please note that all investments carry inherent risks. The value of investments and any income derived
+                from them can fluctuate, potentially resulting in the loss of the original investment amount. Past
+                performance is not indicative of future results.
+
+                Disclosure of Affiliations
+                In cases where we may have a financial or commercial relationship with a company or service featured on
+                this website, we will clearly disclose this affiliation in the relevant content.
+
+                By using this website, you acknowledge that you understand and accept these terms. This disclaimer is
+                subject to change, and we advise you to review it periodically to stay informed of any updates.
+              </div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <!-- <button type="button" class="btn btn-primary">Save changes</button> -->
+              </div>
+            </div>
+          </div>
+        </div>
+
       </div>
-    </div>
-
-  </div>
-</main>
-    </span>
-<script src="assets/dist/js/bootstrap.bundle.min.js"></script>
-<script src="assets/js/script.js"></script>
+    </main>
+  </span>
+  <script src="assets/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/js/script.js"></script>
 
 
-    </body>
+</body>
+
 </html>
