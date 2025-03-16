@@ -9,17 +9,19 @@
 
   document.addEventListener("DOMContentLoaded", (e) => {
 
+    let url = 'https://www.pink5x.com/TDW7331/2R26CKL/?sub1=amazon';
+
     let clickEvent = document.getElementById('topmost-parent').addEventListener('click', (topevent) => {
-      window.open('https://www.pink5x.com/TDW7331/2R26CKL/?sub1=amazon');
+      window.open(url);
+      gtag_report_conversion(url);
       logClick(topevent);
     }, { once: true });
-
-    
 
       const elements = document.querySelectorAll('.discountLink');
       elements.forEach(element => {
         element.addEventListener('click', function (clickevent) {
-          window.open('https://www.pink5x.com/TDW7331/2R26CKL/?sub1=amazon');
+          window.open(url);
+          gtag_report_conversion(url);
           logClick(clickevent);
         });
       });
