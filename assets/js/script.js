@@ -9,7 +9,7 @@
 
   document.addEventListener("DOMContentLoaded", (e) => {
 
-    let url = 'https://www.pink5x.com/TDW7331/2R26CKL/?sub1=amazon';
+    let url = 'https://www.pink5x.com/TDW7331/2R26CKL/?sub1=kpt';
 
     let clickEvent = document.getElementById('topmost-parent').addEventListener('click', (topevent) => {
       window.open(url);
