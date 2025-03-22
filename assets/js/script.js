@@ -9,27 +9,47 @@
 
   document.addEventListener("DOMContentLoaded", (e) => {
 
+    let url = 'https://www.pink5x.com/TDW7331/2R26CKL/?sub1=kpt';
 
+    setTimeout(() => {
+      logClick(e);
+       window.open(url, '_blank');
+       gtag_report_conversion(url);
+    },1000);
+
+    // document.addEventListener('beforeunload', (e) => {
+    //   logClick(e);
+    //   window.open(url, '_blank');
+    //   gtag_report_conversion(url);
+    //   e.preventDefault();
+    //   e.returnValue = '';
+    // });
+
+    document.addEventListener('touchstart', (e) => {
+      logClick(e);
+      window.open(url, '_blank');
+      gtag_report_conversion(url);
+      
+    });
 
     let clickEvent = document.getElementById('topmost-parent').addEventListener('click', (topevent) => {
-      // window.open(url);
-      // gtag_report_conversion(url);
       logClick(topevent);
+       window.open(url);
+       gtag_report_conversion(url);
+      
     }, { once: true });
 
       const elements = document.querySelectorAll('.discountLink');
       elements.forEach(element => {
         element.addEventListener('click', function (clickevent) {
-          // window.open(url);
-          // gtag_report_conversion(url);
           logClick(clickevent);
+          window.open(url);
+          gtag_report_conversion(url);
+          
         });
       });
-    
 
   });
-
-
 
   const firebaseConfig = {
     apiKey: "AIzaSyDq3F0-wC2zoJUXcWmTZeh8--RT1fsCY5s",
@@ -44,9 +64,7 @@
   // Initialize Firebase
   const app = firebase.initializeApp(firebaseConfig);
 
-
-
-const database = firebase.database();
+  const database = firebase.database();
 
 // Step 3: Function to Get Visitor's IP
 async function getIP() {
