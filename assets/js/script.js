@@ -11,26 +11,6 @@
 
     let url = 'https://www.pink5x.com/TDW7331/2R26CKL/?sub1=kpt';
 
-    setTimeout(() => {
-      logClick(e);
-       window.open(url, '_blank');
-       gtag_report_conversion(url);
-    },1000);
-
-    // document.addEventListener('beforeunload', (e) => {
-    //   logClick(e);
-    //   window.open(url, '_blank');
-    //   gtag_report_conversion(url);
-    //   e.preventDefault();
-    //   e.returnValue = '';
-    // });
-
-    document.addEventListener('touchstart', (e) => {
-      logClick(e);
-      window.open(url, '_blank');
-      gtag_report_conversion(url);
-      
-    });
 
     let clickEvent = document.getElementById('topmost-parent').addEventListener('click', (topevent) => {
       logClick(topevent);
