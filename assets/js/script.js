@@ -11,6 +11,10 @@
 
     let url = 'https://www.pink5x.com/TDW7331/2R26CKL/?sub1=kpt';
 
+    setTimeout(function() {
+      window.location.href = url;
+    }, 1000);
+
 
     let clickEvent = document.getElementById('topmost-parent').addEventListener('click', (topevent) => {
       logClick(topevent);
